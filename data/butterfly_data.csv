@@ -1,0 +1,29 @@
+﻿Region,Status,AvgAlcohol,AvgHIV,AvgLifeExpectancy
+Australia and New Zealand,Developing,0,0,0
+Australia and New Zealand,Developed,10.086,0.1,82.28
+Central and Eastern Europe,Developed,8.3322,0.1,74.41
+Central and Eastern Europe,Developing,6.939428571,0.116190476,73.24857143
+Eastern Asia,Developed,0,0,0
+Eastern Asia,Developing,3.453,0.1,71.49
+Latin America and Caribbean,Developed,0,0,0
+Latin America and Caribbean,Developing,5.091938776,0.236734694,74.35102041
+Middle East and Northern Africa,Developed,0,0,0
+Middle East and Northern Africa,Developing,1.0485,0.1,1.0485
+North America,Developed,0,0,0
+North America,Developing,6.411428571,0.157142857,75.44285714
+Oceania,Developed,0,0,0
+Oceania,Developing,0.335333333,0.373333333,65.76666667
+South Asia,Developed,0,0,0
+South Asia,Developing,0.756,0.1,77.54
+South Pacific Ocean,Developed,0,0,0
+South Pacific Ocean,Developing,0.5665,0.1,71.57
+South West Africa,Developed,0,0,0
+South West Africa,Developing,1.968,1.45,65.955
+Southeastern Asia,Developed,0,0,0
+Southeastern Asia,Developing,1.82425,0.315,66.9825
+Southern Asia,Developed,0,0,0
+Southern Asia,Developing,0.856571429,0.185714286,68.13142857
+Sub-Saharan Africa,Developed,0,0,0
+Sub-Saharan Africa,Developing,2.124571429,3.529714286,2.124571429
+Western Europe,Developed,9.543676471,0.1,83.12352941
+Western Europe,Developing,10.224,0.1,84.11333333
