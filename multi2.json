@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/qtpatootie01/LifeExpectancy_A2/main/data/NEW_LifeExpectancyData.csv"
+  },
+  "vconcat": [
+    {
+      "height": 400,
+      "width": "container",
+      "mark": "bar",
+      "title": "Life Expectancy over the Years (2010 - 2014)",
+      "params": [
+        {
+          "name": "Region",
+          "select": {"type": "point", "fields": ["Region"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": {"param": "time_brush"}},
+        {"filter": "datum.Region != 'NA'"},
+        {"filter": "datum.Year > 2010"}
+      ],
+      "encoding": {
+        "x": {"field": "Region", "type": "nominal", "axis": null},
+        "y": {
+          "aggregate": "average",
+          "field": "Life_Expectancy",
+          "type": "quantitative",
+          "title": "Life_Expectancy"
+        },
+        "color": {"field": "Region", "title": "Region"},
+        "opacity": {"condition": {"param": "Region", "value": 1}, "value": 0.1},
+        "tooltip": [
+          {"field": "Region", "title": "Region"},
+          {
+            "field": "Life_Expectancy",
+            "aggregate": "mean",
+            "format": ".2f",
+            "title": "Average Life_Expectancy"
+          }
+        ]
+      }
+    },
+    {
+      "layer": [
+        {
+          "height": 400,
+          "width": "container",
+          "mark": "line",
+          "transform": [
+            {"filter": "datum['Region'] != 'NA'"},
+            {"filter": "datum.Year > 2010"}
+          ],
+          "params": [
+            {
+              "name": "time_brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "encoding": {
+            "x": {"field": "Year", "type": "nominal", "title": null},
+            "y": {
+              "aggregate": "average",
+              "field": "Life_Expectancy",
+              "title": "Life_Expectancy",
+              "sort": "strokeWidth"
+            },
+            "color": {"field": "Region"},
+            "opacity": {
+              "condition": {"param": "Region", "value": 1},
+              "value": 0.1
+            },
+            "tooltip": [{"field": "Region", "title": "Region"}]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFont": "Source Sans Pro, sans-serif",
+      "labelAngle": 0,
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter",
+      "labelFontSize": 14,
+      "labelLimit": 500
+    },
+    "lineBreak": "lb",
+    "title": {"fontSize": 15},
+    "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+    "style": {
+      "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 15},
+      "text": {
+        "font": "Source Sans Pro, sans-serif",
+        "fontWeight": "normal",
+        "size": 14
+      }
+    }
+  }
+}
